@@ -1,0 +1,26 @@
+<app-user-nav></app-user-nav>
+<div
+  class="profile-box"
+  *ngIf="userProfile$ | async as userProfile; else loading"
+>
+  <div class="top">
+    <div class="image">
+      <img src="{{ image }}" alt="" />
+      <!-- <mat-form-field > -->
+        <!-- <form enctype="multipart/form-data"  #myForm="ngForm"> -->
+          <input type="text" [(ngModel)]="userName" >
+          <!-- <mat-form-field class="example-form-field">
+            <mat-label>Clearable input</mat-label> -->
+            <input  type="file" [(ngModel)]="value" (change)="change($event)" >
+        <!-- </form> -->
+      
+          <!-- <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=undefined">
+            <mat-icon>close</mat-icon>
+          </button> -->
+        <!-- </mat-form-field> -->
+    
+    </div>
+  </div>
+</div>
+<button (click)="submit()">submit</button>
+<ng-template #loading><mat-spinner class="loading"></mat-spinner></ng-template>

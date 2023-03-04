@@ -1,0 +1,116 @@
+.profile-box {
+  width: 1000px;
+  height: 500px;
+  /* background-color: white; */
+  margin: 0 auto;
+  border-radius: 30px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.posts-count {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.posts-count .number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0px solid black;
+  border-radius: 100px;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  font-weight: 800;
+}
+.followers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.followers .number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0px solid black;
+  border-radius: 100px;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  font-weight: 800;
+}
+.following {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .following .number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid black;
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    font-weight: 800;
+  }
+.middle {
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  padding: 5px;
+}
+.bottom {
+  display: flex;
+  justify-content: space-around;
+  /* align-self: flex-end; */
+}
+.image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 800;
+  /* justify-content: space-between; */
+}
+.image img {
+  border: 1px solid black;
+}
+* {
+  cursor: default;
+}
+.posts {
+  width: 1000px;
+  min-height: auto;
+  background-color: white;
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: ; */
+}
+.posts img {
+  margin: 10px;
+  border: 1px solid black;
+}
+.bottom-section {
+  display: flex;
+  flex-direction: column;
+}
+.post-section {
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+}
+.loading{
+  margin: auto auto;
+}
