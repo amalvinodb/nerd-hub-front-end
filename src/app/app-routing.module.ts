@@ -5,10 +5,10 @@ import { LogInComponent } from './features/userManagement.feature/log-in.store/l
 import { SignUpComponent } from './features/userManagement.feature/sign-up/sign-up.component';
 import { RouterLoginGuard } from './shared/guard/router-login.guard'
 import {RouterLogoutGuard} from './shared/guard/router-logout.guard'
-import {UserProfileComponent} from './features/user-profile/user-profile.component'
+import {UserProfileComponent} from './features/userControl.feature/user-profile/user-profile.component'
 import {SettingsComponent} from './features/settings/settings.component'
 import {EditProfileComponent} from './features/userControl.feature/edit-profile/edit-profile.component'
-import {PostsComponent} from './features/posts/posts.component'
+import {PostsComponent} from './features/postManagement.feature/posts/posts.component'
 
 const routes: Routes = [
   {path:'',component:LandingComponent,canActivate:[RouterLoginGuard]},

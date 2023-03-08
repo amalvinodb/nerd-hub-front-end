@@ -26,7 +26,7 @@ export class UserProfileEffects {
       ofType(UserProfileActions.getUserProfile),
       switchMap((action) =>{
         // console.log(action,"this is from the effect and to be read")
-        return this.userServices.getProfile(action.tocken).pipe(
+        return this.userServices.getProfile().pipe(
           map((userProfile: UserProfile) => {
             // console.log(userProfile);
             return UserProfileActions.getUserProfileSuccess({ userProfile });

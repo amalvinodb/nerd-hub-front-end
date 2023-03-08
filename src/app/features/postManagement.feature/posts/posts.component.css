@@ -1,0 +1,11 @@
+.postBox{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+.spacing{
+    min-height: 10px;
+    width: inherit;
+    /* margin: 10 0; */
+}

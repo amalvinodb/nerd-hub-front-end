@@ -3,7 +3,7 @@ import { createAction, props } from '@ngrx/store';
 
 export const editProfile = createAction(
   '[User Edit] Edit Request',
-  props<{ image:FormData,userName:String,tocken:String }>()
+  props<{ image:FormData }>()
 );
 
 export const editSuccess = createAction(

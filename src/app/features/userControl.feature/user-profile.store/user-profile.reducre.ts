@@ -1,6 +1,7 @@
 import { createReducer, on, createFeatureSelector, createSelector } from '@ngrx/store';
 // import { UserProfile } from './user-profile.model';
 import * as UserProfileActions from './user-profile.actions';
+
 export interface UserProfile {
     userName: string;
     dateOfBirth: string;

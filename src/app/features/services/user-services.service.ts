@@ -32,15 +32,19 @@ export class UserServicesService {
       { name, password }
     );
   }
-  getProfile(tocken: String): Observable<any> {
+  getProfile(): Observable<any> {
     console.log("tocken")
     return this.http.get<any>(
       'http://localhost:3000/user/user-profile'
     );
   }
-  editUser(image:FormData,userName:String,tocken:String){
-    const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    console.log(image.get('image'),userName)
-    return this.http.post<any>('http://localhost:3000/user/editUserName',{userName,image},{headers})
+  editUser(image:FormData){
+    // const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    // console.log(image.get('image'),userName)
+    return this.http.post<any>('http://localhost:3000/user/editUserName',image)
   }
+  getPosts(){
+    return this.http.get<any>('http://localhost:3000/user/userPosts')
+  }
+
 }

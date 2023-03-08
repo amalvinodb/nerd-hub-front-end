@@ -14,7 +14,7 @@ export interface UserProfile {
   
 export const getUserProfile = createAction(
   '[User Profile] Get User Profile',
-  props<{tocken:String}>()
+  
 );
 
 export const getUserProfileSuccess = createAction(

@@ -35,31 +35,19 @@ export class EditProfileComponent implements OnInit {
     private router: Router
   ) {}
   submit() {
-    const tocke = localStorage.getItem('tocken');
-    if (tocke != null && this.userName != undefined) {
-      const payload = {
-        image: this.formdata,
-        userName: this.userName,
-        tocken: tocke,
-      };
-      // console.log(this.formdata.get('image'))
-      this.store.dispatch(editProfile(payload));
-    }
+    this.formdata.append('userName', this.userName!);
+
+    this.store.dispatch(editProfile({ image: this.formdata }));
   }
   change(event: any) {
-   console.log(event.target.files[0].size)
     if (event.target) {
       let reader = new FileReader();
       this.formdata.append('image', event.target.files[0]);
-      // this.formdata.append('upload_preset', 'hk0nezym');
-      // this.formdata.append('cloud_name', 'dchrawfgy');
       this.selectedfile = event.target.files[0];
       reader.readAsDataURL(event.target.files[0]);
       reader.onload = (event: any) => {
         this.image = event.target.result;
       };
-      console.log((this.formdata as any).size)
-      // console.log(this.formdata)
     }
   }
 }

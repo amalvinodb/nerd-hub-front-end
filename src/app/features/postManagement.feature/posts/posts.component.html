@@ -1,0 +1,12 @@
+<app-user-nav></app-user-nav>
+<div class="postBox">
+    <img src="{{url}}" alt="image to be uploaded">
+    <div class="spacing"></div>
+    <input type="file" (change)="postImage($event)" >
+    <div class="spacing"></div>
+    <mat-form-field appearance="fill">
+        <mat-label>Textarea</mat-label>
+        <textarea matInput [(ngModel)]="discription"></textarea>
+      </mat-form-field>
+      <button mat-stroked-button color="primary" (click)="submitPost()" >complete post</button>
+</div>

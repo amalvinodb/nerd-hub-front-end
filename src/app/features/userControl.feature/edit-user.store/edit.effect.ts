@@ -17,12 +17,13 @@ export class EditUserEffects {
   eidtUser$ = createEffect(() =>
     this.actions$.pipe(
       ofType(EditUserActions.editProfile),
-      mergeMap(({ image, userName, tocken }) =>
-        this.userServices.editUser(image, userName, tocken).pipe(
+      mergeMap(( {image} ) =>
+        this.userServices.editUser(image).pipe(
           map((response) =>{
+            console.log(response)
             localStorage.removeItem('tocken')
             localStorage.setItem('tocken',response.tocken)
-            // console.log(response.tocken)
+            this.router.navigate(['profile'])
             return EditUserActions.editSuccess({ message: response.message })}
           ),
           catchError((error) =>

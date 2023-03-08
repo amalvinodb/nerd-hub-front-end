@@ -90,7 +90,7 @@
   cursor: default;
 }
 .posts {
-  width: 1000px;
+  min-width: 1000px;
   min-height: auto;
   background-color: white;
   padding: 5px;
@@ -113,4 +113,10 @@
 }
 .loading{
   margin: auto auto;
+}
+.postImage{
+  max-width: 230px;
+}
+.imageProfile{
+  width: 400px;
 }

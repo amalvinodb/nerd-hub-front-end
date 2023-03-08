@@ -8,10 +8,52 @@
     <div class="messages"></div>
   </div>
   <div class="body">
-    <app-post></app-post>
-    <app-post></app-post>
-    <app-post></app-post>
-    <app-post></app-post>
+    <div class="post" *ngFor="let post of allposts">
+      <!-- <app-post [data]="post"></app-post> -->
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{ post.image }}" alt="Photo of a Shiba Inu" />
+        <mat-card-actions>
+          <button mat-button (click)="likePost(post._id)">
+           
+              LIKE
+            {{post.likes_count}}
+            
+          </button>
+          <button mat-button (click)="comment(post._id)"></button>
+         
+        </mat-card-actions>
+         <!--  -->
+         <mat-accordion>
+          <mat-expansion-panel
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title> COMMENT'S </mat-panel-title>
+              <mat-panel-description>
+                read all comments
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>
+              I'm visible because I am open
+            </p>
+            <input type="text">
+            <button>comment</button>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <!--  -->
+        <mat-card-content>
+          <p>
+            {{ post.discription }}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
   <div class="notification">
     <div class="notifications">thanks</div>
@@ -21,3 +63,4 @@
     <div class="notifications"></div>
   </div>
 </div>
+<div></div>

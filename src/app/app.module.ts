@@ -13,6 +13,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import {AuthEffects} from './features/userManagement.feature/signup.store/user.effect'
 import { authReducer } from './features/userManagement.feature/signup.store/user.recucer';
@@ -43,7 +44,8 @@ import { UserProfileComponent } from './features/userControl.feature/user-profil
 import { PostComponent } from './features/mainPage.feature/post/post.component';
 import { SettingsComponent } from './features/settings/settings.component';
 import { EditProfileComponent } from './features/userControl.feature/edit-profile/edit-profile.component';
-import { PostsComponent } from './features/posts/posts.component';
+import { PostsComponent } from './features/postManagement.feature/posts/posts.component';
+import { ArrayValuePipe } from './shared/pipes/array-value.pipe';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,8 @@ import { PostsComponent } from './features/posts/posts.component';
     PostComponent,
     SettingsComponent,
     EditProfileComponent,
-    PostsComponent
+    PostsComponent,
+    ArrayValuePipe
   ],
   imports: [
     BrowserModule,
@@ -80,7 +83,8 @@ import { PostsComponent } from './features/posts/posts.component';
     MatMenuModule,
     MatProgressSpinnerModule,
     MatTabsModule,
-    CloudinaryModule
+    CloudinaryModule,
+    MatExpansionModule
   ],
   providers: [
     {
