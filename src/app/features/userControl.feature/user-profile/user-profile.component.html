@@ -1,27 +1,32 @@
 <app-user-nav></app-user-nav>
+<div class="sepreator"></div>
 <div
   class="profile-box"
   *ngIf="userProfile$ | async as userProfile; else loading"
 >
   <div class="top">
     <div class="image">
-      <img src="{{ userProfile.image }}" alt="" class="imageProfile"/>
+      <img src="{{ userProfile.image }}" alt="" class="imageProfile" />
       <p>
         {{ userProfile.userName }}
-        <button mat-button color="primary" (click)="editProfile()"><mat-icon>create</mat-icon></button>
+        <button mat-button color="primary" (click)="editProfile()">
+          <mat-icon>create</mat-icon>
+        </button>
       </p>
     </div>
-    <div class="posts-count">
-      <p class="number">{{ userProfile.posts }}</p>
-      <p>posts</p>
-    </div>
-    <div class="followers">
-      <p class="number">{{ userProfile.followers }}</p>
-      <p>followers</p>
-    </div>
-    <div class="following">
-      <p class="number">{{ userProfile.following }}</p>
-      <p>following</p>
+    <div class="counts">
+      <div class="posts-count">
+        <p class="number">{{ userProfile.posts }}</p>
+        <p>posts</p>
+      </div>
+      <div class="followers">
+        <p class="number">{{ userProfile.followers }}</p>
+        <p>followers</p>
+      </div>
+      <div class="following">
+        <p class="number">{{ userProfile.following }}</p>
+        <p>following</p>
+      </div>
     </div>
   </div>
   <div class="middle">
@@ -37,7 +42,7 @@
       <!-- <p>Liked posts</p> -->
     </div>
 
-    <div class="posts" >
+    <div class="posts">
       <div class="post" *ngFor="let post of posts">
         <img src="{{ post.image }}" alt="" class="postImage" />
       </div>

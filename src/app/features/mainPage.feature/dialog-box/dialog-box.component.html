@@ -1,0 +1,42 @@
+<mat-dialog-actions align="end" class="topBar">
+  <div class="userDetails">
+    <img src="{{ postData.userImage }}" alt="" class="userImage" />
+    <div class="postDetails">
+      {{ postData.userName }} <br>
+      {{postData.uploadDate | date}}
+    </div>
+  </div>
+  <button mat-button mat-dialog-close cdkFocusInitial>Cancel</button>
+</mat-dialog-actions>
+<mat-dialog-content class="mat-typography">
+  <div class="left">
+    <img src="{{ postData.image }}" alt="" class="postImage" />
+  </div>
+  <div class="right">
+    <div class="top">
+        <div *ngFor="let comment of postData.comments">
+          <div class="individulaComment">
+            <img src="{{comment.userImage}}" alt="" class="userCommentImage">
+            <div class="commentData">
+              <div class="commentUserName">{{comment.userName}}</div>
+              <div class="commentCommentData">{{comment.comment}}</div>
+              <div class="commentCommentDate">{{comment.datePosted|date}}</div>
+              
+              
+              
+            </div>
+            
+          </div>
+          
+        </div>
+    </div>
+    <div class="mid">
+      {{postData.discription}}
+    </div>
+    <div class="bottom">
+        <input type="text" class="commentBox" [(ngModel)]="comment" placeholder="type the comment here....">
+        <button class="sendButton" (click)="makeComment(postData._id)"><mat-icon>send</mat-icon></button>
+    </div>
+  </div>
+</mat-dialog-content>
+<!--  -->

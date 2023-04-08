@@ -9,7 +9,10 @@ import {UserProfileComponent} from './features/userControl.feature/user-profile/
 import {SettingsComponent} from './features/settings/settings.component'
 import {EditProfileComponent} from './features/userControl.feature/edit-profile/edit-profile.component'
 import {PostsComponent} from './features/postManagement.feature/posts/posts.component'
-
+import { AdminLoginComponent } from './features/adminFeatures/admin-login/admin-login.component';
+import {AdminGuardGuard} from './shared/guard/admin-guard.guard'
+import {AdminLoginGuardGuard} from './shared/guard/admin-login-guard.guard'
+import { AdminPageComponent } from './features/adminFeatures/admin-page/admin-page.component';
 const routes: Routes = [
   {path:'',component:LandingComponent,canActivate:[RouterLoginGuard]},
   {path:'signup',component:SignUpComponent,canActivate:[RouterLogoutGuard]},
@@ -17,7 +20,9 @@ const routes: Routes = [
   {path:'profile',component:UserProfileComponent,canActivate:[RouterLoginGuard]},
   {path:'settings',component:SettingsComponent,canActivate:[RouterLoginGuard]},
   {path:'edit-profile',component:EditProfileComponent,canActivate:[RouterLoginGuard]},
-  {path:'create-posts',component:PostsComponent,canActivate:[RouterLoginGuard]}
+  {path:'create-posts',component:PostsComponent,canActivate:[RouterLoginGuard]},
+  {path:'admin/login',component:AdminLoginComponent,canActivate:[AdminLoginGuardGuard]},
+  {path:'admin',component:AdminPageComponent,canActivate:[AdminGuardGuard]}
 ];
 
 @NgModule({

@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import * as fromUserProfile from '../user-profile.store/user-profile.reducre';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import {UserServicesService} from '../../services/user-services.service'
 
 @Component({
   selector: 'app-edit-profile',
@@ -16,13 +17,15 @@ export class EditProfileComponent implements OnInit {
   value: File | undefined;
   formdata = new FormData();
   selectedfile: File | undefined;
-  userProfile$: Observable<UserProfile | null> | undefined;
-  error$: Observable<UserProfile | null> | undefined;
+  userProfile: any | undefined;
+
+  profileDiscription:string|undefined;
   ngOnInit(): void {
-    this.userProfile$ = this.store.select(fromUserProfile.selectUserProfile);
-    this.error$ = this.store.select(fromUserProfile.selectUserProfile);
-    this.userProfile$.subscribe((data) => {
+    this.service.getProfile().subscribe((data) => {
+      console.log(data);
+      this.userProfile = data
       this.userName = data?.userName;
+      this.profileDiscription = data.discription
       if (data != null) {
         this.image = data.image;
       }
@@ -32,11 +35,12 @@ export class EditProfileComponent implements OnInit {
   }
   constructor(
     private store: Store<fromUserProfile.State>,
-    private router: Router
+    private router: Router,
+    private service:UserServicesService
   ) {}
   submit() {
     this.formdata.append('userName', this.userName!);
-
+    this.formdata.append('profileDiscription',this.profileDiscription!)
     this.store.dispatch(editProfile({ image: this.formdata }));
   }
   change(event: any) {

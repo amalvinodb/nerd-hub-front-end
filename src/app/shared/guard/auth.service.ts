@@ -11,4 +11,7 @@ export class AuthService {
     return !!localStorage.getItem('tocken')
     
   }
+  isAdminLoggedIn(){
+    return !!localStorage.getItem('AdminTocken')
+  }
 }

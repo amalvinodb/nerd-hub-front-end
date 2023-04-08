@@ -1,0 +1,54 @@
+<!-- <div class="example-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your email</mat-label>
+    <input
+      matInput
+      placeholder="pat@example.com"
+      [(ngModel)]="email"
+      required
+    />
+    <mat-error></mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your password</mat-label>
+    <input
+      matInput
+      [type]="hide ? 'password' : 'text'"
+      [(ngModel)]="password"
+    />
+    <button
+      mat-icon-button
+      matSuffix
+      (click)="hide = !hide"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide"
+    >
+      <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+    </button>
+  </mat-form-field>
+  <button mat-button color="primary" (click)="login()">Login</button>
+</div> -->
+
+<div class="login-box">
+  <p>Login</p>
+
+  <div class="user-box">
+    <input
+      matInput
+      placeholder="pat@example.com"
+      [(ngModel)]="email"
+      required
+    />
+    <!-- <label>Email</label> -->
+  </div>
+  <div class="user-box">
+    <input type="password" placeholder="Password" [(ngModel)]="password" />
+  </div>
+  <a (click)="login()">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    Submit
+  </a>
+</div>

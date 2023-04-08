@@ -9,34 +9,24 @@ import { Store } from '@ngrx/store';
   styleUrls: ['./log-in.component.css'],
 })
 export class LogInComponent {
- 
-  
+  constructor(private store: Store, private router: Router) {}
 
-  constructor(private store: Store,private router:Router) {}
-
-  hide = true;
+  hide = false;
   email = new FormControl('', [Validators.required, Validators.email]);
   password = '';
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'You must enter a value';
-    }
 
-    return this.email.hasError('email') ? 'Not a valid email' : '';
-  }
   login() {
-    if(this.email.value&&this.password.length>4){
+    if (this.email.value && this.password.length > 4) {
       const payload = {
         name: this.email.value,
-        password: this.password
+        password: this.password,
       };
       this.store.dispatch(login(payload));
-    }else{
+    } else {
       // console.log("not working")
     }
-  
   }
-  signup(){
-    this.router.navigate(['signup'])
+  signup() {
+    this.router.navigate(['signup']);
   }
 }

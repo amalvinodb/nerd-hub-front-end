@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import {FormsModule, ReactiveFormsModule } from '@angular/forms'
@@ -25,10 +25,11 @@ import {EditUserEffects} from './features/userControl.feature/edit-user.store/ed
 import {eidtReducer} from './features/userControl.feature/edit-user.store/edit.reducer'
 
 import {AuthInterceptor} from '../app/shared/interceptor/apiHeader.interceptor'
+import {CommonErrorHandlerService} from './shared/errorhandler/common-error-handler.service'
 
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatTabsModule} from '@angular/material/tabs';
-import {CloudinaryModule} from '@cloudinary/ng'
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -46,6 +47,13 @@ import { SettingsComponent } from './features/settings/settings.component';
 import { EditProfileComponent } from './features/userControl.feature/edit-profile/edit-profile.component';
 import { PostsComponent } from './features/postManagement.feature/posts/posts.component';
 import { ArrayValuePipe } from './shared/pipes/array-value.pipe';
+import { NotificationComponent } from './features/notification_box/notification/notification.component';
+import { MessagesComponent } from './features/message_box/messages/messages.component';
+import { DialogBoxComponent } from './features/mainPage.feature/dialog-box/dialog-box.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { AdminLoginComponent } from './features/adminFeatures/admin-login/admin-login.component';
+import { AdminPageComponent } from './features/adminFeatures/admin-page/admin-page.component';
+
 
 @NgModule({
   declarations: [
@@ -60,7 +68,13 @@ import { ArrayValuePipe } from './shared/pipes/array-value.pipe';
     SettingsComponent,
     EditProfileComponent,
     PostsComponent,
-    ArrayValuePipe
+    ArrayValuePipe,
+    NotificationComponent,
+    MessagesComponent,
+    DialogBoxComponent,
+    AdminLoginComponent,
+    AdminPageComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -83,15 +97,17 @@ import { ArrayValuePipe } from './shared/pipes/array-value.pipe';
     MatMenuModule,
     MatProgressSpinnerModule,
     MatTabsModule,
-    CloudinaryModule,
-    MatExpansionModule
+
+    MatExpansionModule,
+    MatDialogModule
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
-    }
+    },
+    { provide: ErrorHandler, useClass: CommonErrorHandlerService }
   ],
   bootstrap: [AppComponent]
 })

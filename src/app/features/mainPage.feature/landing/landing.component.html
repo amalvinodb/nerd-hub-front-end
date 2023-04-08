@@ -1,51 +1,39 @@
 <app-user-nav></app-user-nav>
 <div class="screen">
   <div class="message">
-    <div class="messages">hello</div>
-    <div class="messages"></div>
-    <div class="messages"></div>
-    <div class="messages"></div>
-    <div class="messages"></div>
+    <app-messages></app-messages>
   </div>
   <div class="body">
     <div class="post" *ngFor="let post of allposts">
-      <!-- <app-post [data]="post"></app-post> -->
       <mat-card class="example-card">
         <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Shiba Inu</mat-card-title>
-          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+          <div mat-card-avatar>
+            <img
+              src="{{ post.userImage }}"
+              alt=""
+              class="example-header-image"
+            />
+          </div>
+          <mat-card-title>{{ post.userName }}</mat-card-title>
+          <mat-card-subtitle>{{ post.uploadDate | date }}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="{{ post.image }}" alt="Photo of a Shiba Inu" />
+        <img
+          mat-card-image
+          src="{{ post.image }}"
+          alt="Photo of a Shiba Inu"
+          class="postImage"
+        />
         <mat-card-actions>
           <button mat-button (click)="likePost(post._id)">
-           
-              LIKE
-            {{post.likes_count}}
-            
+            LIKE
+            {{ post.likes_count }}
           </button>
-          <button mat-button (click)="comment(post._id)"></button>
-         
+          <button mat-button (click)="openDialog(post._id)">
+            COMMENT {{ post.comment_count }}
+          </button>
         </mat-card-actions>
-         <!--  -->
-         <mat-accordion>
-          <mat-expansion-panel
-            (opened)="panelOpenState = true"
-            (closed)="panelOpenState = false"
-          >
-            <mat-expansion-panel-header>
-              <mat-panel-title> COMMENT'S </mat-panel-title>
-              <mat-panel-description>
-                read all comments
-              </mat-panel-description>
-            </mat-expansion-panel-header>
-            <p>
-              I'm visible because I am open
-            </p>
-            <input type="text">
-            <button>comment</button>
-          </mat-expansion-panel>
-        </mat-accordion>
+        <!--  -->
+
         <!--  -->
         <mat-card-content>
           <p>
@@ -56,11 +44,7 @@
     </div>
   </div>
   <div class="notification">
-    <div class="notifications">thanks</div>
-    <div class="notifications"></div>
-    <div class="notifications"></div>
-    <div class="notifications"></div>
-    <div class="notifications"></div>
+    <app-notification></app-notification>
   </div>
 </div>
 <div></div>

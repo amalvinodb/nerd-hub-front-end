@@ -2,3 +2,8 @@
     flex: 1 1 auto;
 
   }
+  .userNavbar{
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+  }

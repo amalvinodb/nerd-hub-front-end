@@ -1,0 +1,117 @@
+.mat-typography{
+    display: flex;
+    width: 1000px;
+    min-height: 90vh;
+    justify-content: space-between;
+}
+.left{
+    width:40%;
+    border-right: 1px solid black;
+}
+.right{
+    width:60%;
+    /* margin-left: 20px; */
+    padding: 10px;
+    border-left: 1px solid black;
+    /* background-color: gray; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.postImage{
+    width: 100%;
+    height: 100%;
+    
+}
+.userImage{
+    width: 50px;
+    max-height: 50px;
+    border-radius: 30px;
+}
+.topBar{
+    margin-bottom: -30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.userDetails{
+    width: 150px;
+    max-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.userName{
+    font-weight: 500;
+}
+.commentBox{
+    width: 450px;
+    height: 25px;
+    border-radius: 30px;
+    border: 1px solid black;
+    margin-left: 50px;
+    padding: 0px 10px;
+}
+.sendButton{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sendButton mat-icon{
+    color: skyblue;
+}
+.bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.postDetails{
+    text-align: left;
+}
+.top{
+    overflow-y: scroll;
+}
+.individulaComment{
+    /* font-size: 15px; */
+    margin-bottom: 80px;
+    color: black;
+    margin: 0px 8px 60px 8px;
+    display: flex;
+    align-items: center;
+    
+}
+.userCommentImage{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+.commentData{
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+}
+.commentUserName{
+    
+    font-size: 10px;
+}
+.commentCommentData{
+    
+    font-size: 12px;
+}
+.commentCommentDate{
+    width: 100%;
+    font-size: 10px;
+    /* border-bottom: 1px solid black; */
+    /* padding-bottom: 30px; */
+}
+.mid{
+    height: 100px;
+    font-size: 15px;
+    width: 100%;
+    color: gray;
+    margin: 10px;
+    overflow-y: scroll;
+}

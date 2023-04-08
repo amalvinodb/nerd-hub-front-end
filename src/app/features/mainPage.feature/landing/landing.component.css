@@ -1,19 +1,35 @@
 .body {
   display: flex;
-  flex-direction: column; 
-  justify-content: center; 
-   align-items: center;
-} 
-.screen{
+  flex-direction: column;
+  justify-content: center;
+}
+.screen {
+  max-width: 90%;
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 100px;
+  margin: 0px auto;
 }
 .example-card {
   max-width: 650px;
   margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: transparent;
 }
-
 .example-header-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
   background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
   background-size: cover;
+}
+.message {
+  align-self: flex-start;
+}
+.notification {
+  align-self: flex-start;
+}
+.postImage {
+  border-radius: 10px;
 }
